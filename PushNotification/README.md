@@ -15,9 +15,9 @@ interface NotificationObject{
   uri?: string;
 }
 
-export default class App React.Component {
+export default class App extends React.Component {
 
-  private getToken = (token: string) => {
+  private getToken = (token: string): void => {
     console.log("Token :", token);
   }
 
@@ -29,7 +29,7 @@ export default class App React.Component {
     console.log("Background :", notification.data);
   }
 
-  render(){
+  public render(){
     return(
       <PushNotification<NotificationObject>
         getToken={ this.getToken }
