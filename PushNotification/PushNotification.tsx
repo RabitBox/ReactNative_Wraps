@@ -6,14 +6,14 @@
 /* React */
 import React from 'react';
 /* Expo */
-import * as Permissions from "expo-permissions";
+import * as Permissions from 'expo-permissions';
 import { Notifications } from 'expo';
 
 /**
  * Notification Base Data
  * T: Object 
  */
-export interface Notification<T = {}> {
+interface Notification<T = {}> {
   origin: "selected"|"received";
   remote: boolean;
   data: T;
@@ -72,7 +72,7 @@ export class PushNotification<T = {}> extends React.Component<{
     this._notificationSubscription && this._notificationSubscription.remove();
   }
 
-  render(){
+  public render(){
     return this.props.children;
   }
 }
